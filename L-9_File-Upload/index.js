@@ -9,7 +9,9 @@ const app = express();
 app.use(express.json());
 
 const fileupload = require('express-fileupload');
-app.use(fileupload());
+app.use(fileupload({
+    useTempFile : true;
+}));
 
 const db = require('./config/database');
 db.connect();
